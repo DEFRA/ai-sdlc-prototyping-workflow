@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Journey Specification Agent
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "/build-prototype/how-it-works"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Journey Specification Agent</h1>
+
+    <p class="govuk-body">The Journey Specification Agent takes design artefacts and converts them into screen
+      templates.</p>
+
+    <p class="govuk-body">Designs often have gaps, or assume the developer already understands certain decisions. The
+      Coding Agent should only write code, not fill gaps or make product decisions. So the Journey Specification Agent
+      fills those gaps first and returns the journey in a format that is easy to review. You review the output before
+      passing to the next agent, so the solution is complete before implementation begins.</p>
+
+    <p class="govuk-body">Customise this for your project. Tell the agent where your designs come from.</p>
+
+    <h2 class="govuk-heading-m">Screen descriptions</h2>
+
+    <p class="govuk-body">Copy and paste plain text descriptions of the screens and user journey.</p>
+
+    <h2 class="govuk-heading-m">Figma MCP</h2>
+
+    <p class="govuk-body">You can import designs directly from Figma. Connect to the Figma MCP, then paste the URL of
+      the page containing your journey.
+    </p>
+
+    {{ govukWarningText({
+    text: "Use of MCP servers requires explicit permission for your project. To request access, ask in #ask-ace.",
+    iconFallbackText: "Warning"
+    }) }}
+
+    <h2 class="govuk-heading-m">Other designs</h2>
+
+    <p class="govuk-body">You can use any format for your designs, including images, screenshots and user stories.
+      Include all the files the agent needs. If something does not work, ask in #ask-ace for support.</p>
+
+    <h2 class="govuk-heading-m">Analyse</h2>
+
+    <p class="govuk-body">Use a powerful AI agent to create the specification file. Complex tasks work best with more
+      powerful models. Copy the <a href="#" class="govuk-link prompt-modal-link"
+                                   data-prompt="/prompts/journey-specification-agent.md">Journey Specification Agent
+        prompt</a> and add your designs.</p>
+
+    <h2 class="govuk-heading-m">Review</h2>
+
+    <p class="govuk-body">Review the output carefully. Start with the Decision Log to see the most critical decisions.
+      Then go screen by screen, checking the order is correct. Finally, review the details for each screen.</p>
+
+    <p class="govuk-body">Friction is data. If you spot mistakes at this stage, the final result will be better. If you
+      can update the agent prompt, the fix benefits everyone who uses this workflow after you.</p>
+
+    {{ govukButton({
+    text: "Create implementation plan",
+    href: "/build-prototype/implementation-plan-agent"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
+

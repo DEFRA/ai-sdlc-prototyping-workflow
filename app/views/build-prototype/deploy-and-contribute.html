@@ -1,0 +1,44 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Deploy and contribute
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/build-prototype/coding-agent"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Deploy and contribute</h1>
+
+    <h2 class="govuk-heading-m">Deploy your prototype</h2>
+
+    <p class="govuk-body">Deploy using CDP. Consider adding a vanity URL to your test environment so users can access the service easily.</p>
+
+    <h2 class="govuk-heading-m">Improve the workflow</h2>
+
+    <p class="govuk-body">As you repeat this workflow, iterate by adding project and team specific instructions to the agents. We want to improve this workflow too, so let us know if you can suggest an improvement.</p>
+
+    <p class="govuk-body">Contribute by:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Suggesting improvements to prompts and agents</li>
+      <li>Adding more automated steps to the workflow</li>
+      <li>Sharing a different workflow your team has developed</li>
+    </ul>
+
+    <p class="govuk-body">To contribute, ask in #ask-ace and we will help publish your work.</p>
+
+    <p class="govuk-body">Sharing prompts, agents, and workflows across Defra will become essential to how we work with AI.</p>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Coding Agent
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/build-prototype/implementation-plan-agent"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Coding Agent</h1>
+
+    <p class="govuk-body">Pass the Journey Specification and Implementation Plan to an AI coding assistant using the <a href="#" class="govuk-link prompt-modal-link" data-prompt="/prompts/coding-agent.md">Coding Agent prompt</a>. Coding agents perform best when the repository includes AI coding rules, but that topic is beyond the scope of this workflow. Use your team's preferred approach. For help setting up coding rules, ask in #ask-ace.</p>
+
+    <p class="govuk-body">Review the changes as you would any PR. Add automated code review steps to spot common issues with AI-generated code.</p>
+
+    {{ govukButton({
+      text: "Continue",
+      href: "/build-prototype/deploy-and-contribute"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  How the workflow works
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/build-prototype"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">How the workflow works</h1>
+
+
+    <p class="govuk-body">Each AI agent performs a specific task. You review the output from the agent, then pass the task on to the next agent. When something goes wrong, fix the agent so it works better next time.</p>
+
+    <p class="govuk-body">The steps are:</p>
+
+    <ol class="govuk-list govuk-list--number">
+      <li>Start with designs</li>
+      <li>Run the Journey Specification Agent</li>
+      <li>Run the Implementation Plan Agent</li>
+      <li>Run the Coding Agent</li>
+      <li>Deploy</li>
+    </ol>
+
+    <h2 class="govuk-heading-m">What each agent does</h2>
+
+    <p class="govuk-body"><strong>Journey Specification Agent</strong> turns designs into screen templates. It fills in gaps from the designs and highlights key implementation decisions for you to review.</p>
+
+    <p class="govuk-body"><strong>Implementation Plan Agent</strong> compares the journey specification and designs to the existing codebase. It helps to identify conflicts in the new designs, and checks that the new screens follow existing patterns.</p>
+
+    <p class="govuk-body"><strong>Coding Agent</strong> writes code following your repository's rules and patterns, using the implementation plan to guide each change.</p>
+
+    {{ govukButton({
+      text: "Create journey specification",
+      href: "/build-prototype/journey-specification-agent"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

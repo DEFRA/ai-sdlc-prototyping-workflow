@@ -1,0 +1,44 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Implementation Plan Agent
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/build-prototype/journey-specification-agent"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Implementation Plan Agent</h1>
+
+    <p class="govuk-body">This step requires knowledge of your codebase, so you must use an AI coding assistant such as Cursor, Claude Code, or GitHub Copilot.</p>
+
+    <p class="govuk-body">The Implementation Plan Agent checks for problems before coding begins. It compares the Journey Specification with your codebase and identifies errors and conflicts between new designs and existing code. Resolving these issues early prevents problems during implementation.</p>
+
+    <p class="govuk-body">Pass your Journey Specification from the previous step to your AI coding assistant using the <a href="#" class="govuk-link prompt-modal-link" data-prompt="/prompts/implementation-plan-agent.md">Implementation Plan Agent prompt</a>.</p>
+
+    <h2 class="govuk-heading-m">Review</h2>
+
+    <p class="govuk-body">Review the summary output from the agent. It lists the most important changes and action points. If you are happy, review the new implementation plan file. Edit the implementation plan manually if you disagree with the build order.</p>
+
+    <p class="govuk-body">Mistakes are easier to spot and fix at this stage than during the coding stage. If you see an issue you can fix, suggest an update to the agent so it helps others in future.</p>
+
+    <div class="govuk-!-margin-top-6">
+      {{ govukButton({
+        text: "Continue",
+        href: "/build-prototype/coding-agent"
+      }) }}
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
